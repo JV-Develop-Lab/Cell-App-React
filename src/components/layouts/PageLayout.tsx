@@ -1,11 +1,12 @@
-import {Box, Heading, Text} from "@chakra-ui/react";
+import {Box, Button, Heading, Text} from "@chakra-ui/react";
 import {HTMLAttributes} from "react";
+import Navbar from "../Navbar";
 
 type PageLayoutProps = HTMLAttributes<HTMLDivElement>;
 
 export default function PageLayout({...props}: PageLayoutProps){
-    return<Box height="100vh" position="relative">
-        <Heading color="blue">안녕하세요</Heading>
+    return<Box as="main" position="relative" h="100%" width="100%">
         {props.children}
+        <Navbar/>
     </Box>
 }

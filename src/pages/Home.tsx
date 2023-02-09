@@ -1,9 +1,10 @@
 import { ActivityComponentType } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
-import { useFlow } from "./stackflow";
-import PageLayout from "./layouts/PageLayout";
+import { useFlow } from "../stackflow";
+import PageLayout from "../components/layouts/PageLayout";
+import {Heading} from "@chakra-ui/react";
 
-const MyActivity: ActivityComponentType = () => {
+const Home: ActivityComponentType = () => {
     const { push } = useFlow();
     
     const onClick = () => {
@@ -20,13 +21,12 @@ const MyActivity: ActivityComponentType = () => {
                 title: "My Activity",
             }}
         >
-            <div style={{height: "100vh"}}></div>
             <PageLayout>
-                My Activity
+                <Heading>Howday 👋 갈렙!</Heading>
                 <button onClick={onClick}>Go to article page</button>
             </PageLayout>
         </AppScreen>
     );
 };
 
-export default MyActivity;
+export default Home;

@@ -3,9 +3,7 @@ import { Stack } from "./stackflow";
 
 function App() {
 
-  return (
-          <Stack />
-  )
+  return <Stack />
 }
 
 export default App
