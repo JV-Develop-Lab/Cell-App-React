@@ -16,11 +16,7 @@ const Home: ActivityComponentType = () => {
     };
     
     return (
-        <AppScreen
-            appBar={{
-                title: "My Activity",
-            }}
-        >
+        <AppScreen>
             <PageLayout>
                 <Heading>Howday 👋 갈렙!</Heading>
                 <button onClick={onClick}>Go to article page</button>

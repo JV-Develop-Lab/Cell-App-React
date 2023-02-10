@@ -18,7 +18,7 @@ const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
     };
     
     return (
-        <AppScreen appBar={{ title: "Article" }}>
+        <AppScreen>
             <Box height="100%">
                 <h1>{params.title}</h1>
                 <button onClick={onNextClick}>next</button>
