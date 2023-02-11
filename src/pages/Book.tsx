@@ -1,12 +1,12 @@
 import { ActivityComponentType } from "@stackflow/react";
-import { AppScreen } from "@stackflow/plugin-basic-ui";
-import { useStepFlow } from "./stackflow";
+import { useStepFlow } from "../stackflow";
 import {Box} from "@chakra-ui/react";
+import PageLayout from "../components/layouts/PageLayout";
 
 type ArticleParams = {
     title: string;
 };
-const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
+const Book: ActivityComponentType<ArticleParams> = ({ params }) => {
     // 타입 안정성을 위해 현재 액티비티의 이름을 넣어줘요
     const { stepPush } = useStepFlow("Article");
     
@@ -18,13 +18,13 @@ const Article: ActivityComponentType<ArticleParams> = ({ params }) => {
     };
     
     return (
-        <AppScreen>
+        <PageLayout>
             <Box height="100%">
                 <h1>{params.title}</h1>
                 <button onClick={onNextClick}>next</button>
             </Box>
-        </AppScreen>
+            </PageLayout>
     );
 };
 
-export default Article;
+export default Book;
