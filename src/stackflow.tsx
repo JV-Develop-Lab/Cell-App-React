@@ -13,8 +13,7 @@ export const activities = {
     Book
 }
 
-//  TODO: 이거는 스택플로에 기여해도 되겠다.
-export type activitiesType = keyof typeof activities
+export type TypeActivities = keyof typeof activities
 
 export const { Stack, useFlow } = stackflow({
     transitionDuration: 350,
@@ -32,12 +31,6 @@ export const { Stack, useFlow } = stackflow({
         basicUIPlugin({
             theme: "cupertino",
         }),
-        historySyncPlugin({
-            routes: {
-                Home: "/home",
-                Book: "/book",
-            },
-            fallbackActivity: () => "Home",
-        })
     ],
+    initialActivity: () => "Home",
 });

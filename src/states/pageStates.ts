@@ -1,7 +1,7 @@
 import {atom} from "recoil";
-import {activitiesType} from "../stackflow";
+import {TypeActivities} from "../stackflow";
 
-const mainPageState = atom<activitiesType>({
+const mainPageState = atom<TypeActivities>({
     key: 'mainPageState',
     default: "Home",
 });
