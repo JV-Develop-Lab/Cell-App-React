@@ -9,7 +9,8 @@ export default function PageLayout({...props}: PageLayoutProps){
     return <AppScreen>
         <Box as="main" position="relative" h="100%" width="100%">
             {props.children}
-            <Navbar/>
         </Box>
-    </AppScreen>
+            <Navbar/>
+        </AppScreen>
+
 }

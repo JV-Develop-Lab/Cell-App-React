@@ -6,8 +6,9 @@ import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
 
 import Home from "./pages/Home";
 import Book from "./pages/Book";
+import {historySyncPlugin} from "@stackflow/plugin-history-sync";
 
-const activities = {
+export const activities = {
     Home,
     Book
 }
@@ -15,14 +16,28 @@ const activities = {
 //  TODO: 이거는 스택플로에 기여해도 되겠다.
 export type activitiesType = keyof typeof activities
 
-export const { Stack, useFlow, useStepFlow } = stackflow({
+export const { Stack, useFlow } = stackflow({
     transitionDuration: 350,
+    activities,
     plugins: [
+        () => {
+            return {
+                key: "my-plugin",
+                onInit() {
+                    console.log("Initialized!");
+                },
+            };
+        },
         basicRendererPlugin(),
         basicUIPlugin({
             theme: "cupertino",
         }),
+        historySyncPlugin({
+            routes: {
+                Home: "/home",
+                Book: "/book",
+            },
+            fallbackActivity: () => "Home",
+        })
     ],
-    activities,
-    initialActivity: () => "Home",
 });
